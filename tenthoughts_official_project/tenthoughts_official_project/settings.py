@@ -42,7 +42,6 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'tenthoughts',
-    'custom_user',
 )
 
 MIDDLEWARE_CLASSES = (
