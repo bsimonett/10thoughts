@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %} Members of the {{ bschool_name }} community {% endblock %}
+
+{% block body_block %}
+	<h1>{{ bschool_name }}</h1>
+        {% if bschool %}
+            {% if members %}
+            <ul>
+                {% for UserProf in members %}
+		<h1>{{ UserProf.user.first_name }} {{ UserProf.user.last_name }} {{ UserProf.user.username }}</h1>
+		<a href="/10thoughts/follow/{{ UserProf.user.username }}">Follow</a>
+		<a href="/10thoughts/unfollow/{{ UserProf.user.username }}">Unfollow</a> 
+                {% endfor %}
+            </ul>
+            {% else %}
+                <strong>There are no current members in that Community</strong>
+            {% endif %}
+        {% else %}
+            The specified bschool {{ bschool_name }} does not exist!
+        {% endif %}
+        
+{% endblock %}

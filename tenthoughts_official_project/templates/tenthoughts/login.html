@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Is anyone getting tired of repeatedly entering the header over and over?? -->
+        <title>10Thoughts</title>
+    </head>
+
+    <body>
+        <h1>Login to 10Thoughts</h1>
+
+        <form id="login_form" method="post" action="/10thoughts/login/">
+            {% csrf_token %}
+            Email: <input type="text" name="Email" value="" size="50" />
+            <br />
+            Password: <input type="password" name="password" value="" size="50" />
+            <br />
+
+            <input type="submit" value="submit" />
+        </form>
+
+    </body>
+</html>

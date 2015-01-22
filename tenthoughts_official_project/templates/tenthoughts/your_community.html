@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %} Your Current Community {% endblock %}
+
+{% block body_block %}
+	<h1>People you're following </h1>
+            {% if following_list %}
+            <ul>
+                {% for UserProf in following_list %}
+		<h1>{{ UserProf.user.first_name }} {{ UserProf.user.last_name }} {{ UserProf.user.username }}</h1>
+		<a href="/10thoughts/unfollow/{{ User.username }}">Unfollow</a> 
+                {% endfor %}
+            </ul>
+            {% else %}
+                <strong>You're not currently following anyone</strong>
+            {% endif %}
+
+	<h1>People following you </h1>
+            {% if follower_list %}
+            <ul>
+                {% for UserProf in follower_list %}
+		<h1>{{ UserProf.user.first_name }} {{ UserProf.user.last_name }} {{ UserProf.user.username }}</h1>
+                {% endfor %}
+            </ul>
+            {% else %}
+                <strong>You're not currently being followed by anyone</strong>
+            {% endif %}
+
+        
+{% endblock %}

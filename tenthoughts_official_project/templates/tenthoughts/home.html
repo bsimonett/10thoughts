@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% if user.is_authenticated %}
+	<h1>Welcome {{ user.username }}!</h1>
+	<h1>Your email is {{email}}</h1>
+	<h1> You are being followed by {{num_followers}} people</h1>
+	<h1> You are following {{num_following}} people </h1>
+	<h1> your articles for the week go here</h1>
+	{% else %}
+	<h1>10 Thoughts</h1>
+	{% endif %}
+    </head>
+
+    <body>
+
+	<a href="/10thoughts/submit_articles/">Submit Articles</a><br />
+	<a href="/10thoughts/logout/">Logout</a><br />
+	<a href="/10thoughts/communitylist/">Follow Others</a><br />
+	<a href="mailto:?subject=Subject&body=message%20goes%20here">Refer Friends</a><br />
+	<a href="/10thoughts/your_community/">Your Community</a><br />
+	<a href="/10thoughts/featured_articles/">Featured Articles</a><br />
+
+    </body>
+</html>

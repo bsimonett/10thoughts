@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% if user.is_authenticated %}
+	<h1>Welcome {{ user.username }}!</h1>
+	{% else %}
+	<h1>welcome to 10Thoughts</h1>
+	{% endif %}
+    </head>
+
+    <body>
+        <h1>10 Thoughts Homepage</h1>
+	{% if user.is_authenticated %}
+	<a href="/10thoughts/logout/">Logout</a><br />
+	{% else %}
+	<a href="/10thoughts/register/">Register Here</a><br />
+	<a href="/10thoughts/login/">Login</a><br />
+	{% endif %}
+	<a href="/10thoughts/about/">About 10Thoughts</a><br/>
+	<a href="/10thoughts/featured_articles/">Featured Articles</a><br/>
+	<a href="/10thoughts/home/">Home</a><br/>
+    </body>
+</html>

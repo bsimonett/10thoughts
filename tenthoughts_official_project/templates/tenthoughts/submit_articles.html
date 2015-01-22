@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	<h1>10 Thoughts Submit Articles</h1>
+    </head>
+
+    <body>
+	<h1>Submit Articles</h1>
+
+	<form id="article_form" method="post" action="/10thoughts/submit_articles/">
+
+	   {% csrf_token %}
+           {% for hidden in form.hidden_fields %}
+               {{ hidden }}
+           {% endfor %}
+
+           {% for field in form.visible_fields %}
+               {{ field.errors }}
+               {{ field.help_text }}
+               {{ field }}
+            {% endfor %}
+
+	    <input type="submit" name="submit" value="Submit Article" />
+	</form>
+
+	<a href="/10thoughts/home/">Homepage</a><br />
+	<a href="/10thoughts/logout/">Logout</a><br />
+	<a href="/10thoughts/followers/">Followers</a><br />
+	<a href="/10thoughts/refer/">Refer Friends</a><br />
+	<a href="/10thoughts/featured_articles/">Featured Articles</a><br />
+	
+    </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>10Thoughts - {% block title %}{% endblock %}</title>
+    </head>
+
+    <body>
+        <div>
+            {% block body_block %}{% endblock %}
+        </div>
+
+        <hr />
+
+        <div>
+            <ul>
+            {% if user.is_authenticated %}
+                <li><a href="/10thoughts/logout/">Logout</a></li>
+            {% else %}
+                <li><a href="/10thoughts/register/">Register Here</a></li>
+                <li><a href="/10thoughts/login/">Login</a></li>
+            {% endif %}
+
+                <li><a href="/10thoughts/about/">About</a></li>
+		<li><a href="/10thoughts/featured_articles/">Featured Articles</a></li>
+		<li><a href="/10thoughts/">HomePage</a></li>
+		<li><a href="/10thoughts/home">Home</a></li>
+
+            </ul>
+        </div>
+    </body>
+</html>
